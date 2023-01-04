@@ -1,4 +1,4 @@
-<h1 align="center">🐍 ROADMAP DJANGO BÁSICO 🐍<h1>
+<h1 align="center">🐍 Phonebook Django 🐍<h1>
 
 <h2 align="center">🔷 Instalar/Configurar 🔷</h2>
 
