@@ -6,7 +6,8 @@
 
 <ol>
     <li><a href="#topico1">Instalar/Configurar</a></li>
-    <li><a href="#topico2">Arquitetura MTV</a></li>
+    <li><a href="#topico2">settings.py</a></li>
+    <li><a href="#topico3">Arquitetura MTV</a></li>
 </ol>
 
 <br>
@@ -84,6 +85,11 @@ O Comando acima cria uma nova estrutura de diretórios:
 
 <br>
 <br>
+<br>
+<h2 align="center" id="topico2">🔷 settings.py 🔷</h2>
+
+<br>
+<br>
 🔹 Agora registre seu aplicativo no mysite/settings.py:
 
 <br>
@@ -151,10 +157,15 @@ Mas é necessário instalar o driver mysqlclient que é uma interface para o ser
 <br>
 <br>
 <br>
-<h2 align="center" id="topico2">🔷 Arquitetura MTV 🔷</h2>
+<h2 align="center" id="topico3">🔷 Arquitetura MTV 🔷</h2>
 
 <br>
 <h3 align="center">Model | Template | Views</h3>
 
 <br>
 O Model é o arquivo que contém a estrutura lógica do projeto e funciona como um intermediário para manipular dados entre o banco de dados e a View. Dentro do arquivo Model é determinado quais tipos de dados, como será armazenado dentro do seu banco e <b>como será exibido quando for requisitado pela View</b> (ou seja, o papel da view é formatar os dados que são vindos do banco através da Model para visualização). O model é a única e definitiva fonte de informações sobre seus dados. Ele contém os campos e comportamentos essenciais dos dados que você está armazenando. Django segue o princípio DRY (Don’t repeat yourself). O objetivo é definir o seu modelo de dados em um só lugar e automaticamente derivar coisas dele. O Template cuida da parte de visualização para o usuário final. Ele é como o front-end de sua aplicação. Nesta arquitetura, esta camada fica armazenado os arquivos html, css, javascript...
+
+<br>
+<br>
+<br>
+<h2 align="center" id="topico3">🔷 Models 🔷</h2>
