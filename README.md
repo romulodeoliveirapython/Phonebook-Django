@@ -168,4 +168,20 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 <br>
 <br>
 <br>
-<h2 align="center" id="topico3">🔷 Models 🔷</h2>
+<h2 align="center" id="topico4">🔷 Models 🔷</h2>
+
+<br>
+🔹 Anterioemente vimos sobre os apps instalados. Antes de podermos utilizá-los devemos realizar as migrações das aplicações para o nosso banco de dados. Podemos fazer isso usando o seguinte comando:
+
+    python manage.py migrate
+
+<br>
+Esse comando olha para o INSTALED_APPS e cria todas as tabelas necessárias no banco de dados de acordo com as configurações do arquivo settings.py. Com isso podemos ver a saída:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img09.png">
+</div>
+
+<br>
+🔹 Agora vamos definir nossos models, o layout do banco de dados:
