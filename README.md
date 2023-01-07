@@ -1,3 +1,11 @@
+<head>
+    <style>
+        a, li {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
 <h1 align="center">🐍 Phonebook Django 🐍<h1>
 
 <br>
