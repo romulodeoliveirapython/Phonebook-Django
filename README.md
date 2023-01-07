@@ -8,6 +8,7 @@
     <li><a href="#topico1">Instalar/Configurar</a></li>
     <li><a href="#topico2">settings.py</a></li>
     <li><a href="#topico3">Arquitetura MTV</a></li>
+    <li><a href="#topico4">Models</a></li>
 </ol>
 
 <br>
@@ -103,7 +104,7 @@ O Comando acima cria uma nova estrutura de diretórios:
 
 <br>
 <br>
-🔻 Timezone e linguagem são definidas no fim do arquivo.
+🔹 Timezone e linguagem são definidas no fim do arquivo.
 
 <br>
 <div align="center">
@@ -119,7 +120,7 @@ Encontrei um repositório muito interessante que fala um pouco sobre o timezone,
 
 <br>
 <br>
-🔻 Para subir o projeto para o GitHub, criei um arquivo chamado testing.py e guardei lá algumas informações mais sensíveis — como a chave secreta e informações sobre o meu banco de dados. Então importei as variáveis que usaria do testing no início do settings.
+🔹 Para subir o projeto para o GitHub, criei um arquivo chamado testing.py e guardei lá algumas informações mais sensíveis — como a chave secreta e informações sobre o meu banco de dados. Então importei as variáveis que usaria do testing no início do settings.
 
 <br>
 <div align="center">
@@ -137,7 +138,7 @@ E ficaram assim:
 
 <br>
 <br>
-🔻 Para o meu banco de dados usei o MariaDB. Se você quiser usar o MariaDB ou MySQL, pode usar algo parecido com:
+🔹 Para o meu banco de dados usei o MariaDB. Se você quiser usar o MariaDB ou MySQL, pode usar algo parecido com:
 
     DATABASES = {
         'default': {
@@ -171,12 +172,12 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 <h2 align="center" id="topico4">🔷 Models 🔷</h2>
 
 <br>
-🔹 Anterioemente vimos sobre os apps instalados. Antes de podermos utilizá-los devemos realizar as migrações das aplicações para o nosso banco de dados. Podemos fazer isso usando o seguinte comando:
+🔹 Anteriormente vimos sobre os apps instalados. Antes de podermos utilizá-los devemos realizar as migrações das aplicações para o nosso banco de dados. Podemos fazer isso usando o seguinte comando:
 
     python manage.py migrate
 
 <br>
-Esse comando olha para o INSTALED_APPS e cria todas as tabelas necessárias no banco de dados de acordo com as configurações do arquivo settings.py. Com isso podemos ver a saída:
+🔹 Esse comando olha para o INSTALED_APPS e cria todas as tabelas necessárias no banco de dados de acordo com as configurações do arquivo settings.py. Com isso podemos ver a saída:
 
 <br>
 <div align="center">
@@ -184,4 +185,106 @@ Esse comando olha para o INSTALED_APPS e cria todas as tabelas necessárias no b
 </div>
 
 <br>
-🔹 Agora vamos definir nossos models, o layout do banco de dados:
+🔹 Agora vamos definir nossos models, o layout do banco de dados. Quero que minha aplicação guarde o nome, sobrenome, empresa, cargo, e-mail, telefone, aniversário e observação do contato. Alguns desses campos não são obrigatórios. Esses conceitos são representados por classes no python:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img10.png">
+</div>
+
+<br>
+🔹 Após isso podemos informar ao Python que fizemos algumas mudanças nos nossos models e que gostaríamos que as informações fossem armazenadas como migrações. As migações são como o Python armazena as alterações em seus models.
+
+    python manage.py makemigrations phonebook
+
+<br>
+🔹 Se você quiser ver o código sql das migrações, execute:
+
+    python manage.py sqlmigrate phonebook 0001
+
+<br>
+<div align="center">
+    <img src="./readme-img/img11.png">
+</div>
+
+<br>
+🔹 Agora execute o seguinte comando para criar essas tabelas no seu banco de dados:
+
+    python manage.py migrate
+
+<br>
+🔹 Agora devemos criar nosso usuário administrador:
+
+    python manage.py createsuperuser
+
+<br>
+🔹 Digite o nome de usuário desejado e pressione enter. Em seguida, você será solicitado a fornecer o endereço de e-mail desejado. A etapa final é inserir sua senha. Você será solicitado a inserir seu senha duas vezes, a segunda vez como uma confirmação da primeira.
+
+<br>
+🔹 Inicie o servidor de desenvolvimento:
+
+    python manage.py runserver
+
+<br>
+🔹 Agora abra o link e entre como administrador: http://127.0.0.1:8000/admin/
+
+<br>
+<div align="center">
+    <img src="./readme-img/img12.png">
+</div>
+
+<br>
+🔹 E esta seá a tela após a autenticação:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img13.png">
+</div>
+
+<br>
+🔹 Para que o nosso aplicativo apareça na interface de admin, precisamos modificar o arquivo phonebook/admin.py:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img14.png">
+</div>
+
+<br>
+🔹 Agora a opção da nossa model já aparece na interface:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img15.png">
+</div>
+
+<br>
+🔹 Clique em contatos e você poderá ver uma tela parecida com esta:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img16.png">
+</div>
+
+<br>
+🔹 Dai no canto superior direito há um botão "adicionar contato". Clique nele e você poderá preencher as informações:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img17.png">
+</div>
+
+<br>
+🔹 Após a adição do contato:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img18.png">
+</div>
+
+<br>
+🔹 Também é possível editar o contato:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img19.png">
+</div>
