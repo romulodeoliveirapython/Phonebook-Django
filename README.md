@@ -193,6 +193,10 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 </div>
 
 <br>
+🔹 Você pode encontrar mais sobre models na documentação oficial do django:
+<br>🔗 https://docs.djangoproject.com/pt-br/4.1/topics/db/models/
+
+<br>
 🔹 Após isso podemos informar ao Python que fizemos algumas mudanças nos nossos models e que gostaríamos que as informações fossem armazenadas como migrações. As migações são como o Python armazena as alterações em seus models.
 
     python manage.py makemigrations phonebook
@@ -290,6 +294,10 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 </div>
 
 <br>
+🔹 Você pode encontrar mais sobre admin na documentação oficial do django:
+<br>🔗 https://docs.djangoproject.com/pt-br/4.1/ref/contrib/admin/
+
+<br>
 🔹 Além disso, como os unicos campos requeridos são o nome e o número de telefone, resolvi criar uma pequena validação para o número. Atualizando o arquivo phonebook/models.py:
 
 <br>
@@ -308,3 +316,7 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 <br>
 🔹 Você pode encontrar mais sobre validações na documentação oficial do django:
 <br>🔗 https://docs.djangoproject.com/en/4.1/ref/validators/
+
+Class Based Views
+
+<br>🔗 https://docs.djangoproject.com/en/4.1/ref/class-based-views/
