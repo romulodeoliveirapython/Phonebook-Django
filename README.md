@@ -6,9 +6,14 @@
 
 <ol>
     <li><a href="#topico1">Instalar/Configurar</a></li>
-    <li><a href="#topico2">settings.py</a></li>
+    <li><a href="#topico2">Settings</a></li>
     <li><a href="#topico3">Arquitetura MTV</a></li>
     <li><a href="#topico4">Models</a></li>
+    <li><a href="#topico5">Admin</a></li>
+    <li><a href="#topico6">Forms</a></li>
+    <li><a href="#topico7">Templates</a></li>
+    <li><a href="#topico8">Views</a></li>
+    <li><a href="#topico9">Urls</a></li>
 </ol>
 
 <br>
@@ -156,6 +161,14 @@ Mas é necessário instalar o driver mysqlclient que é uma interface para o ser
     pip install mysqlclient
 
 <br>
+🔹 Para que o django também reconheça a pasta de templates, importei a biblioteca OS e fiz a seguinte modificação na lista TEMPLATES:
+
+<br>
+<div align="center" id="templates">
+    <img src="./readme-img/img23.png">
+</div>
+
+<br>
 <br>
 <br>
 <h2 align="center" id="topico3">🔷 Arquitetura MTV 🔷</h2>
@@ -215,6 +228,11 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 🔹 Agora execute o seguinte comando para criar essas tabelas no seu banco de dados:
 
     python manage.py migrate
+
+<br>
+<br>
+<br>
+<h2 align="center" id="topico5">🔷 Admin 🔷</h2>
 
 <br>
 🔹 Agora devemos criar nosso usuário administrador:
@@ -298,7 +316,7 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 <br>🔗 https://docs.djangoproject.com/pt-br/4.1/ref/contrib/admin/
 
 <br>
-🔹 Além disso, como os unicos campos requeridos são o nome e o número de telefone, resolvi criar uma pequena validação para o número. Atualizando o arquivo phonebook/models.py:
+🔹 Como os unicos campos requeridos são o nome e o número de telefone, resolvi criar uma pequena validação para o número. Atualizando o arquivo phonebook/models.py:
 
 <br>
 <div align="center">
@@ -306,7 +324,7 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 </div>
 
 <br>
-🔹 Caso queira criar essa validação, deve executar o makemigration e migrate novamente. Assim fica a interface de administrador quando o usuário tenta inserir caracteres não numéricos:
+🔹 Caso queira criar essa validação, deve executar o <code>makemigration</code> e <code>migrate</code> novamente. Assim fica a interface de administrador quando o usuário tenta inserir caracteres não numéricos:
 
 <br>
 <div align="center">
@@ -317,6 +335,66 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 🔹 Você pode encontrar mais sobre validações na documentação oficial do django:
 <br>🔗 https://docs.djangoproject.com/en/4.1/ref/validators/
 
-Class Based Views
+<br>
+<br>
+<br>
+<h2 align="center" id="topico6">🔷 Forms 🔷</h2>
 
+<br>
+🔹 Em HTML, um formulário é uma coleção de elementos dentro da tag <code>forms</code> que permitir que um visitante faça coisas como inserir texto, selecionar opções, manipular objetos ou controles, e assim por diante, e depois enviar essas informações de volta para o servidor.
+
+<br>
+🔹 Agora que vamos trabalhar com os forms na nossa aplicação, devemos começar criando um arquivo no diretório da aplicação com o nome forms.py e o editamos da seguinte forma:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img22.png">
+</div>
+
+<br>
+🔹 Você pode encontrar mais sobre forms na documentação oficial do django:
+<br>🔗 https://docs.djangoproject.com/en/4.1/topics/forms/
+
+<br>
+<br>
+<br>
+<h2 align="center" id="topico7">🔷 Templates 🔷</h2>
+
+<br>
+🔹 Para começarmos a trabalhar com os <a href="#templates">templates</a> você deve ter configurado o settings como foi passado anteriormente.
+
+<br>
+🔹 Agora crie um diretório chamado "templates" e um subdiretório com o nome da sua aplicação.
+
+<br>
+🔹 O django tem um modelo de criação de arquivos html dentro da pasta templates. Você pode criar desta forma: "nome-do-model" + "_" + "tipo-da-função".html
+
+Ex.: contato_list.html
+
+<br>
+🔹 Você pode encontrar mais sobre templates na documentação oficial do django:
+<br>🔗 https://docs.djangoproject.com/en/4.1/#the-template-layer
+<br>🔗 https://docs.djangoproject.com/en/4.1/topics/templates/
+
+<br>
+<br>
+<br>
+<h2 align="center" id="topico8">🔷 Views 🔷</h2>
+
+<br>
+🔹 Você pode encontrar mais sobre views na documentação oficial do django:
+<br>🔗 https://docs.djangoproject.com/en/4.1/#the-view-layer
 <br>🔗 https://docs.djangoproject.com/en/4.1/ref/class-based-views/
+
+<br>
+<br>
+<br>
+<h2 align="center" id="topico9">🔷 URL's 🔷</h2>
+
+<br>
+🔹 Para trabalhar com as URL's, devemos criar um arquivo phonebook/urls.py e importá-la no mysite/urls.py:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img24.png">
+</div>
