@@ -288,3 +288,23 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 <div align="center">
     <img src="./readme-img/img19.png">
 </div>
+
+<br>
+🔹 Além disso, como os unicos campos requeridos são o nome e o número de telefone, resolvi criar uma pequena validação para o número. Atualizando o arquivo phonebook/models.py:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img20.png">
+</div>
+
+<br>
+🔹 Caso queira criar essa validação, deve executar o makemigration e migrate novamente. Assim fica a interface de administrador quando o usuário tenta inserir caracteres não numéricos:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img21.png">
+</div>
+
+<br>
+🔹 Você pode encontrar mais sobre validações na documentação oficial do django:
+<br>🔗 https://docs.djangoproject.com/en/4.1/ref/validators/
