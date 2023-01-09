@@ -382,6 +382,14 @@ Ex.: contato_list.html
 <h2 align="center" id="topico8">🔷 Views 🔷</h2>
 
 <br>
+🔹 Nesta aplicação, viso exercitar o CRUD (create, read, update and delete). Como na interface administrativa eu já havia criado um contato, comecei a criar as views pelo "read". Fica algo parecido com:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img25.png">
+</div>
+
+<br>
 🔹 Você pode encontrar mais sobre views na documentação oficial do django:
 <br>🔗 https://docs.djangoproject.com/en/4.1/#the-view-layer
 <br>🔗 https://docs.djangoproject.com/en/4.1/ref/class-based-views/
