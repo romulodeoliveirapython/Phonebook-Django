@@ -406,3 +406,11 @@ Ex.: contato_list.html
 <div align="center">
     <img src="./readme-img/img24.png">
 </div>
+ 
+<br>
+🔹 Depois podemos podemos criar nossas urls dentro da aplicação de forma parecida com isto:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img26.png">
+</div>
