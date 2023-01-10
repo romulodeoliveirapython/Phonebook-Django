@@ -5,11 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Contato</title>
+    <title>📘 | Adicionar Contato</title>
 </head>
 
 <body>
     <h1>Adicionar Contato</h1>
+    <form action="." method="post">
+        {% csrf_token %}
+
+        <label for="nome">Nome:</label><br>
+        <input id="nome" type="text" name="nome"><br>
+        <br>
+
+        <label for="sobrenome">Sobrenome:</label><br>
+        <input id="sobrenome" type="text" name="sobrenome"><br>
+        <br>
+
+        <label for="empresa">Empresa:</label><br>
+        <input id="empresa" type="text" name="empresa"><br>
+        <br>
+
+        <label for="cargo">Cargo:</label><br>
+        <input id="cargo" type="text" name="cargo"><br>
+        <br>
+
+        <label for="email">E-mail:</label><br>
+        <input id="email" type="text" name="email"><br>
+        <br>
+
+        <label for="telefone">Telefone:</label><br>
+        <input id="telefone" type="text" name="telefone"><br>
+        <br>
+
+        <label for="aniversario">Aniversário:</label><br>
+        <input id="aniversario" type="date" name="aniversario"><br>
+        <br>
+
+        <label for="observaçao">Observação:</label><br>
+        <textarea id="observaçao" name="observaçao" rows="4" cols="50"></textarea>
+        <br>
+
+        <br>
+        <input type="submit" value="Salvar">
+        <input type="reset" value="Cancelar" onclick="location.href = '{% url 'phonebook:list' %}'">
+    </form>
 </body>
 
 </html>
