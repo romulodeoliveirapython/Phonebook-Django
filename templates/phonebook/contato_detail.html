@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📘 | {{ object.nome }}</title>
+</head>
+
+<body>
+    <h1>Detalhe</h1>
+
+    <a href="{% url 'phonebook:list' %}">Voltar</a>
+    <a href="{% url 'phonebook:update' pk=phonebook.id %}">Editar</a>
+
+
+    <p>Nome: {{ object.nome }}</p>
+    <p>Sobrenome: {{ object.sobrenome }}</p>
+    <p>Empresa: {{ object.empresa }}</p>
+    <p>Cargo: {{ object.cargo }}</p>
+    <p>E-mail: {{ object.email }}</p>
+    <p>Telefone: {{ object.telefone }}</p>
+    <p>Aniversário: {{ object.aniversario_dia }} de {{ object.aniversario_mes }}</p>
+    <p>Observação: {{ object.observaçao }}</p>
+
+</body>
+
+</html>

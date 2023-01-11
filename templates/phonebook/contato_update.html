@@ -5,39 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📘 | Adicionar Contato</title>
+    <title>📘 | Editar {{ object.nome }}</title>
 </head>
 
 <body>
-    <h1>Adicionar Contato</h1>
+    <h1>Editar Contato</h1>
     <form action="." method="post">
         {% csrf_token %}
 
         <label for="nome">Nome:</label><br>
+        <label for="nome">Antigo: {{ object.nome }}</label><br>
         <input id="nome" type="text" name="nome"><br>
         <br>
 
         <label for="sobrenome">Sobrenome:</label><br>
+        <label for="sobrenome">Antigo: {{ object.sobrenome }}</label><br>
         <input id="sobrenome" type="text" name="sobrenome"><br>
         <br>
 
         <label for="empresa">Empresa:</label><br>
+        <label for="empresa">Antigo: {{ object.empresa }}</label><br>
         <input id="empresa" type="text" name="empresa"><br>
         <br>
 
         <label for="cargo">Cargo:</label><br>
+        <label for="cargo">Antigo: {{ object.cargo }}</label><br>
         <input id="cargo" type="text" name="cargo"><br>
         <br>
 
         <label for="email">E-mail:</label><br>
+        <label for="email">Antigo: {{ object.email }}</label><br>
         <input id="email" type="text" name="email"><br>
         <br>
 
         <label for="telefone">Telefone:</label><br>
+        <label for="telefone">Antigo: {{ object.telefone }}</label><br>
         <input id="telefone" type="text" name="telefone"><br>
         <br>
 
         <label for="aniversario">Aniversário:</label><br>
+        <label for="aniversario">Antigo: {{ object.aniversario_dia }} de {{ object.aniversario_mes }}</label><br>
 
         <select id="aniversario_dia" name="aniversario_dia">
             <option value="01">01</option>
@@ -86,11 +93,11 @@
             <option value="out">Outubro</option>
             <option value="nov">Novembro</option>
             <option value="dez">Dezembro</option>
-        </select>
-
+        </select><br>
         <br>
 
         <label for="observaçao">Observação:</label><br>
+        <label for="observaçao">Antigo: {{ object.observaçao }}</label><br>
         <textarea id="observaçao" name="observaçao" rows="4" cols="50"></textarea>
         <br>
 

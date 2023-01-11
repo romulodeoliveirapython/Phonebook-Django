@@ -13,7 +13,9 @@
     <input type="submit" onclick="location.href = '{% url 'phonebook:create' %}'" value="Criar Contato">
     <ul>
         {% for contato in object_list %}
-        <li><span>{{ contato.nome }}</span> | <span>{{ contato.telefone }}</span></li>
+        <a href="{% url 'phonebook:detail' pk=contato.id %}">
+            <li><span>{{ contato.nome }}</span> | <span>{{ contato.telefone }}</span></li>
+        </a>
         {% endfor %}
     </ul>
 </body>
