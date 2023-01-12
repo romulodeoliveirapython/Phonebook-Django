@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from phonebook.models import Contato
 from django.urls import reverse_lazy
 
@@ -27,3 +27,9 @@ class ContatoUpdate(UpdateView):
     queryset = Contato.objects.all()
     success_url = reverse_lazy('phonebook:list')
     template_name = 'phonebook/contato_update.html'
+
+class ContatoDelete(DeleteView):
+    model = Contato
+    fields = '__all__'
+    success_url = reverse_lazy('phonebook:list')
+    
