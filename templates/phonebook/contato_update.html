@@ -14,37 +14,31 @@
         {% csrf_token %}
 
         <label for="nome">Nome:</label><br>
-        <label for="nome">Antigo: {{ object.nome }}</label><br>
-        <input id="nome" type="text" name="nome"><br>
+        <input id="nome" type="text" name="nome" placeholder="{{ object.nome }}"><br>
         <br>
 
         <label for="sobrenome">Sobrenome:</label><br>
-        <label for="sobrenome">Antigo: {{ object.sobrenome }}</label><br>
-        <input id="sobrenome" type="text" name="sobrenome"><br>
+        <input id="sobrenome" type="text" name="sobrenome" placeholder="{{ object.sobrenome }}"><br>
         <br>
 
         <label for="empresa">Empresa:</label><br>
-        <label for="empresa">Antigo: {{ object.empresa }}</label><br>
-        <input id="empresa" type="text" name="empresa"><br>
+        <input id="empresa" type="text" name="empresa" placeholder="{{ object.empresa }}"><br>
         <br>
 
         <label for="cargo">Cargo:</label><br>
-        <label for="cargo">Antigo: {{ object.cargo }}</label><br>
-        <input id="cargo" type="text" name="cargo"><br>
+        <input id="cargo" type="text" name="cargo" placeholder="{{ object.cargo }}"><br>
         <br>
 
         <label for="email">E-mail:</label><br>
-        <label for="email">Antigo: {{ object.email }}</label><br>
-        <input id="email" type="text" name="email"><br>
+        <input id="email" type="text" name="email" placeholder="{{ object.email }}"><br>
         <br>
 
         <label for="telefone">Telefone:</label><br>
-        <label for="telefone">Antigo: {{ object.telefone }}</label><br>
-        <input id="telefone" type="text" name="telefone"><br>
+        <input id="telefone" type="text" name="telefone" placeholder="{{ object.telefone }}"><br>
         <br>
 
         <label for="aniversario">Aniversário:</label><br>
-        <label for="aniversario">Antigo: {{ object.aniversario_dia }} de {{ object.aniversario_mes }}</label><br>
+        <label for="aniversario">{{ object.aniversario_dia }} de {{ object.aniversario_mes }}</label><br>
 
         <select id="aniversario_dia" name="aniversario_dia">
             <option value="01">01</option>
@@ -97,8 +91,7 @@
         <br>
 
         <label for="observaçao">Observação:</label><br>
-        <label for="observaçao">Antigo: {{ object.observaçao }}</label><br>
-        <textarea id="observaçao" name="observaçao" rows="4" cols="50"></textarea>
+        <textarea id="observaçao" name="observaçao" rows="4" cols="50" placeholder="{{ object.observaçao }}"></textarea>
         <br>
 
         <br>
