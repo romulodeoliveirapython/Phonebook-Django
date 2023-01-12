@@ -12,7 +12,8 @@
     <h1>Detalhe</h1>
 
     <a href="{% url 'phonebook:list' %}">Voltar</a>
-    <a href="{% url 'phonebook:update' pk=phonebook.id %}">Editar</a>
+    <a href="{% url 'phonebook:update' contato.id %}">Editar</a>
+    <a href="{% url 'phonebook:delete' contato.id %}">Delete</a>
 
 
     <p>Nome: {{ object.nome }}</p>
