@@ -206,6 +206,11 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 </div>
 
 <br>
+<div align="center">
+    <img src="./readme-img/img27.png">
+</div>
+
+<br>
 🔹 Você pode encontrar mais sobre models na documentação oficial do django:
 <br>🔗 https://docs.djangoproject.com/pt-br/4.1/topics/db/models/
 
@@ -365,11 +370,6 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 
 <br>
 🔹 Agora crie um diretório chamado "templates" e um subdiretório com o nome da sua aplicação.
-
-<br>
-🔹 O django tem um modelo de criação de arquivos html dentro da pasta templates. Você pode criar desta forma: "nome-do-model" + "_" + "tipo-da-função".html
-
-Ex.: contato_list.html
 
 <br>
 🔹 Você pode encontrar mais sobre templates na documentação oficial do django:
