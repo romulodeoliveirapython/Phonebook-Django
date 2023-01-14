@@ -372,6 +372,51 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 🔹 Agora crie um diretório chamado "templates" e um subdiretório com o nome da sua aplicação.
 
 <br>
+🔹 A view "ContatoList" ficou responśavel pelo template que listará os contatos na tela. O html responsável por isso ficou assim:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img33.png">
+</div>
+
+<br>
+<div align="center">
+    <img src="./readme-img/img28.png">
+</div>
+
+<br>
+🔹 A view "ContatoCreate" ficou responśavel pelo template que listará os contatos na tela. O html responsável por isso ficou assim:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img29.png">
+</div>
+
+<br>
+🔹 A view "ContatoDetail" ficou responśavel pelo template que listará os contatos na tela. O html responsável por isso ficou assim:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img30.png">
+</div>
+
+<br>
+🔹 A view "ContatoUpdate" ficou responśavel pelo template que listará os contatos na tela. O html responsável por isso ficou assim:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img31.png">
+</div>
+
+<br>
+🔹 A view "ContatoDelete" ficou responśavel pelo template que listará os contatos na tela. O html responsável por isso ficou assim:
+
+<br>
+<div align="center">
+    <img src="./readme-img/img32.png">
+</div>
+
+<br>
 🔹 Você pode encontrar mais sobre templates na documentação oficial do django:
 <br>🔗 https://docs.djangoproject.com/en/4.1/#the-template-layer
 <br>🔗 https://docs.djangoproject.com/en/4.1/topics/templates/
