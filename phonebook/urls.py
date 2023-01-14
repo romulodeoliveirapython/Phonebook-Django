@@ -5,6 +5,7 @@ from phonebook import views
 app_name = 'phonebook'
 
 urlpatterns = [
+    path('', views.home, name = 'home'),
     path('list/', views.ContatoList.as_view(), name = 'list'),
     path('detail/<int:pk>/', views.ContatoDetail.as_view(), name = 'detail'),
     path('create/', views.ContatoCreate.as_view(), name = 'create'),
