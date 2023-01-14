@@ -10,7 +10,12 @@
 
 <body>
     <h1>Lista de Contatos</h1>
-    <input type="submit" onclick="location.href = '{% url 'phonebook:create' %}'" value="Criar Contato">
+    <p>Olá, {{ request.user.username }}! Seja bem vindo!</p>
+    <a href="{% url 'phonebook:create' %}">Criar Contato</a>
+    <br>
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'logout' %}">Sair</a>
+    {% endif %}
     <ul>
         {% for contato in object_list %}
         <a href="{% url 'phonebook:detail' pk=contato.id %}">
