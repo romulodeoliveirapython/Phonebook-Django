@@ -414,3 +414,6 @@ O Model é o arquivo que contém a estrutura lógica do projeto e funciona como 
 <div align="center">
     <img src="./readme-img/img26.png">
 </div>
+
+🔹 Você pode encontrar mais sobre urls na documentação oficial do django:
+<br>🔗 https://docs.djangoproject.com/en/4.1/topics/http/urls/
