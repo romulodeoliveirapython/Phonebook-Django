@@ -68,4 +68,4 @@ class Contato(models.Model):
     observaçao = models.TextField(blank = True)
 
     def __str__(self):
-        return self.nome
+        return "{} - {}".format(self.nome, self.telefone)
