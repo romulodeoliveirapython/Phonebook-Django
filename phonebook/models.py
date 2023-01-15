@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
 
 
 def validar_numero(value):
@@ -57,6 +58,7 @@ class Contato(models.Model):
         ('31', '31'),
     ]
 
+    usuario = models.ForeignKey(User, on_delete = models.CASCADE)
     nome = models.CharField(max_length = 30)
     sobrenome = models.CharField(max_length = 30, blank = True)
     empresa = models.CharField(max_length = 60, blank = True)

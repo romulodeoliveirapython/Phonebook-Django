@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from phonebook.models import Contato
+from phonebook.forms import ContatoForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -14,7 +15,9 @@ def home(request):
 @method_decorator(login_required, name='dispatch')
 class ContatoList(ListView):
     model = Contato
-    queryset = Contato.objects.all()
+
+    def get_queryset(self):
+        return Contato.objects.filter(usuario = self.request.user)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -29,6 +32,21 @@ class ContatoCreate(CreateView):
     model = Contato
     fields = '__all__'
     success_url = reverse_lazy('phonebook:list')
+
+    def novoContato(request):
+
+        if request.method == 'POST':
+            form = ContatoForm(request.POST)
+
+            if form.is_valid():
+                contato = form.save(commit = False)
+                contato.usuario = request.user
+                contato.save()
+                return redirect('phonebook:list')
+
+        else:
+            form = ContatoForm()
+            return render(request, 'phonebook:list', {'form': form})
 
 
 @method_decorator(login_required, name='dispatch')
