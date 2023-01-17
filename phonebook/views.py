@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from phonebook.models import Contato
-from phonebook.forms import ContatoForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from urllib import request
+from phonebook.forms import ContatoForm
+from django.shortcuts import get_object_or_404
 
 
 def home(request):
@@ -17,7 +17,7 @@ class ContatoList(ListView):
     model = Contato
 
     def get_queryset(self):
-        return Contato.objects.filter(usuario = self.request.user)
+        return Contato.objects.filter(user = self.request.user)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -30,32 +30,29 @@ class ContatoDetail(DetailView):
 @method_decorator(login_required, name='dispatch')
 class ContatoCreate(CreateView):
     model = Contato
-    fields = '__all__'
+    form_class = ContatoForm
+    template_name = 'phonebook/create_contact.html'
     success_url = reverse_lazy('phonebook:list')
 
-    def novoContato(request):
-
-        if request.method == 'POST':
-            form = ContatoForm(request.POST)
-
-            if form.is_valid():
-                contato = form.save(commit = False)
-                contato.usuario = request.user
-                contato.save()
-                return redirect('phonebook:list')
-
+    def form_valid(self, form):
+        if self.request.user.is_authenticated:
+            form.instance.user = self.request.user
+            return super().form_valid(form)
         else:
-            form = ContatoForm()
-            return render(request, 'phonebook:list', {'form': form})
+            return redirect('login')
 
 
 @method_decorator(login_required, name='dispatch')
 class ContatoUpdate(UpdateView):
     model: Contato
     fields = '__all__'
-    queryset = Contato.objects.all()
+    # queryset = Contato.objects.all()
     success_url = reverse_lazy('phonebook:list')
     template_name = 'phonebook/contato_update.html'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 
 @method_decorator(login_required, name='dispatch')
