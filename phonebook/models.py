@@ -58,7 +58,7 @@ class Contato(models.Model):
         ('31', '31'),
     ]
 
-    usuario = models.ForeignKey(User, on_delete = models.CASCADE)
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
     nome = models.CharField(max_length = 30)
     sobrenome = models.CharField(max_length = 30, blank = True)
     empresa = models.CharField(max_length = 60, blank = True)
