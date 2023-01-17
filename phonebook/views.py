@@ -5,7 +5,6 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from phonebook.forms import ContatoForm
-from django.shortcuts import get_object_or_404
 
 
 def home(request):
@@ -45,13 +44,14 @@ class ContatoCreate(CreateView):
 @method_decorator(login_required, name='dispatch')
 class ContatoUpdate(UpdateView):
     model: Contato
-    fields = '__all__'
-    # queryset = Contato.objects.all()
+    queryset = Contato.objects.all()
     success_url = reverse_lazy('phonebook:list')
     template_name = 'phonebook/contato_update.html'
+    form_class = ContatoForm
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        form.save()
         return super().form_valid(form)
 
 
