@@ -1,0 +1,28 @@
+.main_content_list {
+  display: grid;
+  place-items: center;
+}
+
+.div_content_list {
+  width: 62.5rem;
+  max-width: 62.5rem;
+  /* background-color: #d3d3d3; */
+  background-color: #e0e0e0;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  display: grid;
+}
+
+.un_list {
+  display: grid;
+  gap: 1rem;
+}
+
+.link_list {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  background-color: #d3d3d3;
+  border-radius: 0.4rem;
+}

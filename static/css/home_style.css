@@ -1,0 +1,12 @@
+.main_content_home {
+  display: grid;
+  place-items: center;
+}
+
+.div_content_home {
+  max-width: 62.5rem;
+  background-color: #d3d3d3;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  text-align: center;
+}

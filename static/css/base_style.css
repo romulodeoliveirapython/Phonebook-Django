@@ -1,0 +1,50 @@
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Ubuntu;
+}
+
+.header_base {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.logoum {
+  font-style: italic;
+  font-weight: 200;
+}
+
+.divheader {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  gap: 2rem;
+}
+
+.unordered_list_header {
+  display: flex;
+  gap: 1rem;
+}
+
+.list_items_header {
+  list-style: none;
+}
+
+.link_header {
+  text-decoration: none;
+  display: block;
+  padding: 1rem 2rem;
+  color: #000;
+  background-color: #d3d3d3;
+  border-radius: 0.4rem;
+}
+
+.list_items_list {
+  display: flex;
+  place-content: space-around;
+}
+
+.list_items_list span {
+  /* text-align: right; */
+}
