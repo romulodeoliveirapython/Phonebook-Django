@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import View, ListView, DetailView, CreateView, UpdateView, DeleteView
 from phonebook.models import Contato
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
@@ -7,9 +7,12 @@ from django.utils.decorators import method_decorator
 from phonebook.forms import ContatoForm
 
 
-def home(request):
-    return render(request, 'phonebook/home.html')
+class HomeView(View):
+    template_name = 'phonebook/home.html'
+    http_method_names = ['get']
 
+    def get(self, request):
+        return render(request, self.template_name)
 
 @method_decorator(login_required, name='dispatch')
 class ContatoList(ListView):
