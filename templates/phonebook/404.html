@@ -9,8 +9,12 @@
 </head>
 
 <body>
-    <h1>Você está perdido?</h1>
-    <p>Clique <a href="{% url 'phonebook:list' %}">aqui</a> para voltar!</p>
+    {% include "phonebook/base.html" %}
+
+    <main>
+        <h2>Você está perdido?</h2>
+        <p>Clique <a href="{% url 'phonebook:home' %}">aqui</a> para voltar!</p>
+    </main>
 </body>
 
 </html>

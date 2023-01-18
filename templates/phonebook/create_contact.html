@@ -9,97 +9,101 @@
 </head>
 
 <body>
-    <h1>Adicionar Contato</h1>
-    <form action="." method="post">
-        {% csrf_token %}
+    {% include "phonebook/base.html" %}
 
-        <label for="nome">Nome:</label><br>
-        <input id="nome" type="text" name="nome"><br>
-        <br>
+    <main>
+        <h2>Adicionar Contato</h2>
+        <form action="." method="post">
+            {% csrf_token %}
 
-        <label for="sobrenome">Sobrenome:</label><br>
-        <input id="sobrenome" type="text" name="sobrenome"><br>
-        <br>
+            <label for="nome">Nome:</label><br>
+            <input id="nome" type="text" name="nome"><br>
+            <br>
 
-        <label for="empresa">Empresa:</label><br>
-        <input id="empresa" type="text" name="empresa"><br>
-        <br>
+            <label for="sobrenome">Sobrenome:</label><br>
+            <input id="sobrenome" type="text" name="sobrenome"><br>
+            <br>
 
-        <label for="cargo">Cargo:</label><br>
-        <input id="cargo" type="text" name="cargo"><br>
-        <br>
+            <label for="empresa">Empresa:</label><br>
+            <input id="empresa" type="text" name="empresa"><br>
+            <br>
 
-        <label for="email">E-mail:</label><br>
-        <input id="email" type="text" name="email"><br>
-        <br>
+            <label for="cargo">Cargo:</label><br>
+            <input id="cargo" type="text" name="cargo"><br>
+            <br>
 
-        <label for="telefone">Telefone:</label><br>
-        <input id="telefone" type="text" name="telefone"><br>
-        <br>
+            <label for="email">E-mail:</label><br>
+            <input id="email" type="text" name="email"><br>
+            <br>
 
-        <label for="aniversario">Aniversário:</label><br>
+            <label for="telefone">Telefone:</label><br>
+            <input id="telefone" type="text" name="telefone"><br>
+            <br>
 
-        <select id="aniversario_dia" name="aniversario_dia">
-            <option value=""></option>
-            <option value="01">01</option>
-            <option value="02">02</option>
-            <option value="03">03</option>
-            <option value="04">04</option>
-            <option value="05">05</option>
-            <option value="06">06</option>
-            <option value="07">07</option>
-            <option value="08">08</option>
-            <option value="09">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="11">12</option>
-            <option value="11">13</option>
-            <option value="11">14</option>
-            <option value="11">15</option>
-            <option value="11">16</option>
-            <option value="11">17</option>
-            <option value="11">18</option>
-            <option value="11">19</option>
-            <option value="11">20</option>
-            <option value="11">21</option>
-            <option value="11">22</option>
-            <option value="11">23</option>
-            <option value="11">24</option>
-            <option value="11">25</option>
-            <option value="11">26</option>
-            <option value="11">27</option>
-            <option value="11">28</option>
-            <option value="11">29</option>
-            <option value="11">30</option>
-            <option value="11">31</option>
-        </select>
+            <label for="aniversario">Aniversário:</label><br>
 
-        <select id="aniversario_mes" name="aniversario_mes">
-            <option value=""></option>
-            <option value="jan">Janeiro</option>
-            <option value="fev">Fevereiro</option>
-            <option value="mar">Março</option>
-            <option value="abr">Abril</option>
-            <option value="mai">Maio</option>
-            <option value="jun">Junho</option>
-            <option value="jul">Julho</option>
-            <option value="ago">Agosto</option>
-            <option value="set">Setembro</option>
-            <option value="out">Outubro</option>
-            <option value="nov">Novembro</option>
-            <option value="dez">Dezembro</option>
-        </select>
+            <select id="aniversario_dia" name="aniversario_dia">
+                <option value=""></option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="11">12</option>
+                <option value="11">13</option>
+                <option value="11">14</option>
+                <option value="11">15</option>
+                <option value="11">16</option>
+                <option value="11">17</option>
+                <option value="11">18</option>
+                <option value="11">19</option>
+                <option value="11">20</option>
+                <option value="11">21</option>
+                <option value="11">22</option>
+                <option value="11">23</option>
+                <option value="11">24</option>
+                <option value="11">25</option>
+                <option value="11">26</option>
+                <option value="11">27</option>
+                <option value="11">28</option>
+                <option value="11">29</option>
+                <option value="11">30</option>
+                <option value="11">31</option>
+            </select>
 
-        <br>
+            <select id="aniversario_mes" name="aniversario_mes">
+                <option value=""></option>
+                <option value="jan">Janeiro</option>
+                <option value="fev">Fevereiro</option>
+                <option value="mar">Março</option>
+                <option value="abr">Abril</option>
+                <option value="mai">Maio</option>
+                <option value="jun">Junho</option>
+                <option value="jul">Julho</option>
+                <option value="ago">Agosto</option>
+                <option value="set">Setembro</option>
+                <option value="out">Outubro</option>
+                <option value="nov">Novembro</option>
+                <option value="dez">Dezembro</option>
+            </select>
 
-        <label for="observaçao">Observação:</label><br>
-        <textarea id="observaçao" name="observaçao" rows="4" cols="50"></textarea>
-        <br>
+            <br>
 
-        <br>
-        <input type="submit" value="Salvar">
-        <input type="reset" value="Cancelar" onclick="location.href = '{% url 'phonebook:list' %}'">
-    </form>
+            <label for="observaçao">Observação:</label><br>
+            <textarea id="observaçao" name="observaçao" rows="4" cols="50"></textarea>
+            <br>
+
+            <br>
+            <input type="submit" value="Salvar">
+            <input type="reset" value="Cancelar" onclick="location.href = '{% url 'phonebook:list' %}'">
+        </form>
+    </main>
 </body>
 
 </html>

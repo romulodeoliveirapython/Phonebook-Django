@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="pt-br">
 
 <head>
@@ -6,23 +8,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📘 | Lista de Contatos</title>
+    <link rel="stylesheet" href="{% static 'css/contato_list_style.css' %}">
 </head>
 
 <body>
-    <h1>Lista de Contatos</h1>
-    <p>Olá, {{ request.user.username }}! Seja bem vindo!</p>
-    <a href="{% url 'phonebook:create' %}">Criar Contato</a>
-    <br>
-    {% if request.user.is_authenticated %}
-    <a href="{% url 'logout' %}">Sair</a>
-    {% endif %}
-    <ul>
-        {% for contato in object_list %}
-        <a href="{% url 'phonebook:detail' pk=contato.id %}">
-            <li><span>{{ contato.nome }}</span> | <span>{{ contato.telefone }}</span></li>
-        </a>
-        {% endfor %}
-    </ul>
+    {% include "phonebook/base.html" %}
+
+    <main class="main_content_list">
+        <div class="div_content_list">
+            <h2>Lista de Contatos</h2>
+            <ul class="un_list">
+                {% for contato in object_list %}
+                <a href="{% url 'phonebook:detail' pk=contato.id %}" class="link_list">
+                    <li class="list_items_list"><span>{{ contato.nome }}</span><span>{{ contato.telefone }}</span></li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
 </body>
 
 </html>

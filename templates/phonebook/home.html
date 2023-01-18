@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="pt-br">
 
 <head>
@@ -6,11 +8,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📘 | Contatos</title>
+
+    <link rel="stylesheet" href="{% static 'css/home_style.css' %}">
 </head>
 
 <body>
-    <h1>Home</h1>
-    <a href="{% url 'login' %}">Login</a>
+    {% include "phonebook/base.html" %}
+
+    <main class="main_content_home">
+        <div class="div_content_home">
+            <h2>Use já nossa solução para armazenamento dos seus contatos!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sapiente dolor dignissimos.<br><br>Error dolorum amet quo dolor inventore ea, optio incidunt excepturi perspiciatis deserunt quia, labore doloribus nesciunt.<br><br>Ad, enim?</p>
+        </div>
+    </main>
 </body>
 
 </html>

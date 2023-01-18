@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+</head>
+
+<body>
+    <header class="header_base">
+        <div>
+            <h1 class="logo">Phonebook<br><span class="logoum">Django</span></h1>
+        </div>
+
+        <div class="divheader">
+            {% if user.is_authenticated %}
+            <p>Olá, {{ user }}!</p>
+            {% endif %}
+            <ul class="unordered_list_header">
+                <li class="list_items_header"><a href="{% url 'phonebook:home' %}" class="link_header">Início</a></li>
+
+                {% if user.is_authenticated %}
+
+                <li class="list_items_header"><a href="{% url 'phonebook:list' %}" class="link_header">Lista de Contato</a></li>
+
+                <li class="list_items_header"><a href="{% url 'phonebook:create' %}" class="link_header">Novo Contato</a></li>
+
+                <li class="list_items_header"><a href="{% url 'logout' %}" class="link_header">Logout</a></li>
+
+
+                {% else %}
+
+                <li class="list_items_header"><a href="{% url 'login' %}" class="link_header">Login</a></li>
+
+                {% endif %}
+            </ul>
+
+
+        </div>
+    </header>
+</body>
+
+</html>
