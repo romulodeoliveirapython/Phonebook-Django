@@ -36,9 +36,14 @@
             <input id="email" type="text" name="email"><br>
             <br>
 
-            <label for="telefone">Telefone:</label><br>
-            <input id="telefone" type="text" name="telefone"><br>
-            <br>
+            <div>
+                <label for="{{ form.telefone.id_for_label }}">Telefone:</label><br>
+                <input id="telefone" type="text" name="{{ form.telefone.name }}"><br>
+                {% for error in form.telefone.errors %}
+                <p class="error">* {{ error }}</p>
+                {% endfor %}
+                <br>
+            </div>
 
             <label for="aniversario">Aniversário:</label><br>
 
