@@ -44,7 +44,3 @@ html {
   display: flex;
   place-content: space-around;
 }
-
-.list_items_list span {
-  /* text-align: right; */
-}
